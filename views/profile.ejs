@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<body>
+    <!-- 
+    <div class="card-container">
+        <% user.posts.forEach(function(post){ %>
+
+        
+        <div class="card">
+            <img src="/images/uploads/<%= post.image %>" alt="Card Image">
+            <div class="card-content">
+                <p class="card-text"><%= post.imageText %></p>
+            </div>
+        </div>
+
+    <% }) %> -->
+
+        <!-- Add more cards as needed -->
+
+    <!-- </div> -->
+
+    <div class="left">
+        <div class="logo">
+            <img class="b" src="/images/b.png" alt="">
+            <!-- <h1>Musy <span style="color: rgb(135, 17, 214); font-weight: 900;">Hive</span></h1> -->
+        </div>
+
+        <div class="profile">
+            <div class="acov">
+                <a href="/profile" class="active"><i class="fa-solid fa-house"></i> </a>
+                <a href="/feed"><i class="fa-brands fa-searchengin"></i> </a>
+                <a href=""><i class="fa-solid fa-floppy-disk"></i> </a>
+                <a href="/addpost"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+            </div>
+
+        </div>
+    </div>
+    <div id="wrapper">
+
+        <main>
+            <div class="profile-wrap">
+            <div class="profile-details profile-image-container">
+                <% if (user && user.dp) { %>
+                    <div class="img-c" id="profile-image-container">
+                        <label for="file-input" id="file-label">
+                            <i style="cursor: pointer;" class="fa-solid fa-camera"></i>
+                    
+                </label> 
+                <img class="profile-img" src="/images/uploads/dp/<%= user.dp %>" alt="Profile Picture">
+                    </div>
+                    <% } %>
+                    <form id="upload-form" action="/uploaddp" method="post" enctype="multipart/form-data">
+
+                
+
+                        <input type="file" id="file-input" name="dp" accept="image/*">
+
+                    </form>
+                
+            </div>
+            <div class="profile-details">
+                
+                <p class="user">@<%= user.username %></p>
+                <h2><%= user.fullname %></h2>
+                <p class="about">Lorem ipsum dolor sit.</p>
+                <a href="/logout" style="text-decoration: none;" class="logout-button"><i class="fa-solid fa-power-off"></i> LogOut</a>
+            </div>
+            </div>
+
+            <div class="card-container">
+                <% user.posts.forEach(function(post,index){ %>
+        
+                <div class="card <%= index < 4 ? 'first-line' : '' %>">
+                    <div class="img">
+                    <img src="/images/uploads/<%= post.image %>" alt="Card Image">
+                </div>
+                    <!-- <div class="card-content">
+                        <p class="card-text"><%= post.imageText %></p>
+                    </div> -->
+                </div>
+        
+        
+            <% }) %> 
+        
+                <!-- Add more cards as needed -->
+        
+            </div>
+            
+        </main>
+
+    </div>
+</body>
+<script>
+function uploadFile() {
+    document.getElementById('file-input').click();
+}
+
+document.getElementById('file-input').addEventListener('change', function() {
+    const fileInput = this;
+    const imageContainer = document.getElementById('profile-image-container');
+    
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            imageContainer.innerHTML = `<img class="profile-img" src="${e.target.result}" alt="Profile Picture">`;
+        };
+
+        reader.readAsDataURL(file);
+
+
+        setTimeout(function() {
+            document.getElementById('upload-form').submit();
+        }, 100);
+    }
+});
+
+    </script>
+</html>

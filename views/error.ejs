@@ -1,0 +1,47 @@
+<!-- <h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<h1><%= error.stack %></h1> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        video{
+            display: flex;
+            margin-left: 50%;
+            height: 50vh;
+            transform: translateX(-50%);
+            width: 50vw;
+        }
+        .text{
+            text-align: center;
+        }
+        .text h1:nth-child(1){
+            font-size: 4rem;
+            color: red;
+            font-family: monospace;
+            letter-spacing: 5px;
+        }
+        .text h1:nth-child(3){
+            font-size: 1rem;
+            color: rgb(251, 255, 0);
+            font-family: monospace;
+            background: #363636;
+            letter-spacing: 1px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <video loop autoplay muted>
+        <source src="/images/beeerr.mp4" type="video/mp4">
+    </video>
+    <div class="text">
+        <h1><%= message %></h1>
+<h2>Error-code:<%= error.status %></h2>
+<!-- <h1><%= error.stack %></h1> -->
+    </div>
+</body>
+</html>

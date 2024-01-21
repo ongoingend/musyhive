@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative;
+    background: #000;
+    color: white;
+    display: flex;
+    overflow: hidden;
+    /* background-image: url(/images/login_bg.png); */
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.left{
+    /* text-align: center; */
+    /* background: white; */
+    margin-left: 10%;
+    height: 100vh;
+    margin-top: 5%;
+}
+.right{
+    position: absolute;
+    right: 0;
+}
+.right img{
+    height: 130vh;
+    width: 50vw;
+    rotate: -10deg;
+    margin-top: -5rem;
+    margin-right: -5rem;
+}
+
+.b{
+    filter: invert();
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+.cover{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 0.7rem;
+}
+.login-form{
+    margin-top: -30px;
+}
+.login-form h2{
+    font-size: 2rem;
+}
+.login-form .p1{margin-top: -20px;
+font-size: smaller;
+font-weight: 100;
+letter-spacing: 1px;
+text-align: center;}
+
+label{
+    /* text-align: right !important; */
+    font-size: smaller;
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0px;
+    border: none;
+    background: #ffffffef;
+    backdrop-filter: blur(1rem);
+    padding-left: 10px;
+}
+input:focus{
+    outline: none;
+}
+#but{
+    padding: 10px 0px;
+    width: 100%;
+    background: rgb(135, 17, 214);
+    border: transparent;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#but:hover{
+    background: rgb(108, 15, 170);
+    transition: .3s;
+}
+.signup{
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
+.forgot{
+    color: white;
+    margin-top: 10px;
+    font-size: .8rem;
+}

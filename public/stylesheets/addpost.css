@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #000000;
+    font-family: 'Montserrat', sans-serif;
+    /* overflow:hidden; */
+}
+.left{
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #202020;
+    overflow-x: hidden;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px 10px 10px 10px;
+}
+.left .logo{
+    display: flex;
+    align-items: center;
+    margin-top: -15px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.logo img{
+    filter: invert();
+    height: auto;
+    width: 50px;
+}
+.logo h1{
+    font-size: 1.5rem;
+}
+
+#wrapper{
+    margin-left: 60px;
+    font-size: 28px;
+    padding: 0px 10px;
+    background: #0a0a0a;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.profile{
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.acov{
+    margin-left: -20px;
+}
+.acov a{
+    color: white;
+    display: block;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;}
+    .profile a.active{
+        color: rgb(206, 73, 49);
+        transition: 0.4s;
+        background: #e9e9e9;
+        padding: 10px;
+    
+        border-radius: 30%;
+    }
+.profile a:hover{
+    color: rgb(206, 73, 49);
+    transition: 0.4s;
+    background: #e9e9e9;
+    padding: 10px;
+
+    border-radius: 30%;
+}
+.profile i{
+    font-size: 1.2rem;
+}
+
+
+
+#wrapper #imagePreview{
+    max-width: 200px; max-height: 200px;
+    padding: 2rem;
+}
+#cap{
+    width: 40%;
+    padding: 15px 30px;
+    border-radius: 15px;
+    outline: none;
+    font-size: 1rem;
+    /* border: 2px solid rgb(77, 77, 77); */
+    color: red;
+    border: none;
+    margin-bottom: 2rem;
+}
+#cap::placeholder{
+    color: rgb(110, 110, 110);
+    text-transform: capitalize;
+}
+
+.custom-button{
+    font-size: 1rem;
+    padding: 20px 40px;
+    border-radius: 15px;
+    /* border: 2px solid rgb(148, 148, 148); */
+    background: #ffffff;
+    color: red;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+button{
+    font-size: 1rem;
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: none;
+    background: #ffffff;
+    color: rgb(38, 116, 19);
+    cursor: pointer;
+    margin-left: 1rem;
+}

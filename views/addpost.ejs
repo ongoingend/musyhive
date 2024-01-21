@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/addpost.css">
+    <title>Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    <div class="left">
+        <div class="logo">
+            <img class="b" src="/images/b.png" alt="">
+            <!-- <h1>Musy <span style="color: rgb(135, 17, 214); font-weight: 900;">Hive</span></h1> -->
+        </div>
+
+        <div class="profile">
+            <div class="acov">
+                <a href="/profile" ><i class="fa-solid fa-house"></i> </a>
+                <a href="/feed"><i class="fa-brands fa-searchengin"></i> </a>
+                <a href=""><i class="fa-solid fa-floppy-disk"></i> </a>
+                <a href="/addpost" class="active"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+<div id="wrapper">
+    <img id="imagePreview" alt="Image Preview" style=" max-width: 300px; max-height: 300px;" src="/images/blog.png">
+    <br>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="filecaption" 
+        id="cap" placeholder="caption" required>
+        <br>
+
+
+        <input type="file" id="fileInput" name="file" accept="image/*" required onchange="previewImage(event)" style="display: none;">
+
+        <!-- Custom button to trigger file input -->
+
+        <div class="grp1">
+        <label for="fileInput" class="custom-button"><i class="fa-solid fa-magnifying-glass"></i> Choose File</label>
+
+
+        <button type="submit"><i class="fa-solid fa-upload"></i> Upload</button>
+    </div>
+    </form>
+</div>
+</body>
+<script>
+
+ function previewImage(event) {
+        const input = event.target;
+        const preview = document.getElementById('imagePreview');
+
+        const file = input.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'initial';
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '/images/blog.png';
+            preview.style.display = 'none';
+        }
+    }
+</script>
+
+</html>

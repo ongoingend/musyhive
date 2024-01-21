@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body>
+  <div class="left">
+    <div class="cover">
+      <img class="b" src="/images/b.png" alt="">
+      <h1>Musy <span style="color: rgb(135, 17, 214); font-weight: 900;">Hive</span></h1>
+    </div>
+    <section class="content" style="clear:left">
+    <div class="login-form">
+      <h2>Log in to your account</h2>
+      <p class="p1">Welcome Back! Please enter your details.</p>
+      <% if(error.length){ %>
+        <p style="color: red;">*<%= error %>*</p>
+      <% } %>
+      <form action="/login" method="post">
+        <label for="username">username</label>
+      <br>
+        <input type="text" name="username" placeholder="Enter your Username?" />
+      <br>
+        <label for="password" style="margin-top: 10px;">password</label>
+      <br>
+        <input type="password" name="password" placeholder="Enter your Password?" />
+      <br>
+        <button id="but" type="submit">Login</button>
+      </form>
+    </div>
+  </section>
+      <a class="forgot" href="/forgot">forgot password?</a>
+    <br>
+    <div class="signup">
+      <p>Don't have account?</p>
+      <a href="/">Register</a></div>
+  </div>
+
+
+
+
+  <div class="right">
+    <img  src="/images/darkgrid.png" alt="terry bhai">
+  </div>
+</body>
+</html>

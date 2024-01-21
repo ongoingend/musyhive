@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusyHive</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css">
+</head>
+
+<body>
+    <header>
+        <h1>MusyHive</h1>
+    </header>
+
+    <main>
+        <div class="card-container">
+            <% posts.forEach(function(post,user){ %>
+            
+            
+            <div class="card">
+                <img class="image-container" src="/images/uploads/<%= post.image %>" alt="Card Image">
+                <div class="card-content">
+                    <p class="card-text"><%= post.imageText %></p>
+                    <p class="user">@<%= user.username %></p>
+                </div>
+            </div>
+    
+        <% }) %>
+    </main>
+
+    <footer>
+        <p>&copy; MusyHive</p>
+    </footer>
+
+
+</body>
+
+</html>
