@@ -8,6 +8,9 @@ passport.use(new localStrategy(userModel.authenticate()));
 const upload = require('./multer');
 const upload2 = require('./multer2');
 
+
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });

@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressSession = require('express-session');
+const cors = require('cors');
 
 
 var indexRouter = require('./routes/index');
@@ -13,6 +14,15 @@ const passport = require('passport');
 const flash = require('connect-flash');
 
 var app = express();
+
+app.use(cors(
+  {
+    origin: ['https://deploy-mern-1whq.vercel.app'],
+    methods: ['POST', 'GET'],
+    credentials: true
+  }
+));
+app.use(express.json)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
