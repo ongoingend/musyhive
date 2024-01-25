@@ -84,12 +84,15 @@ router.post("/login", passport.authenticate('local', {
 }), function(req, res){
 });
 
+
 router.get('/logout', function(req, res){
   req.logout(function(err) {
-    if (err) { return next(err); }
+    if (err) {
+      return next(err);
+    }
     res.redirect('/');
   });
-})
+});
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()) return next();
